@@ -1,4 +1,5 @@
-_your zenodo badge here_
+[![DOI](https://zenodo.org/badge/478588973.svg)](https://zenodo.org/badge/latestdoi/478588973)
+
 
 # Tebaldi_etal_2022_ESD
 
