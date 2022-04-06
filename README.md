@@ -1,41 +1,51 @@
-[![DOI](https://zenodo.org/badge/265119113.svg)](https://zenodo.org/badge/latestdoi/265119113)
+_your zenodo badge here_
 
-# metarepo
-Template repository for a single point of access meta-repository to reproduce an experiment
+# Tebaldi_etal_2022_ESD
 
-## Purpose
-A meta-repository creates a single point of access for someone to find all of the components that were used to create a published work for the purpose of reproducibility.  This repository should contain references to all minted data and software as well as house any ancillary code used to transform the source data, create figures for your publication, conduct the experiment, and / or execute the contributing software.
+**STITCHES: creating new scenarios of climate model output by stitching together pieces of existing simulations**
 
-## Using the template
-Simply click `Use this template` on the main repository page (shows up to the left of `Clone or download`) and fill in your `Repository name`, the `Description`, select whether you want the repository to be `Public` or `Private`, and leave `Include all branches` unchecked.
+Claudia Tebaldi<sup>1\*</sup> , Abigail Snyder<sup>2</sup>, and Kalyn Dorheim<sup>2</sup>
 
-## Naming your meta-repository
-The following naming conventions should be used when naming your repository:  
-- Single author:  `lastname_year_journal`
-- Multi author:  `lastname-etal_year_journal`
-- Multiple publications in the same journal:  `lastname-etal_year-letter_journal` (e.g., `human-etal_2020-b_nature`)
+<sup>1 </sup> Lawrence Berkeley National Laboratory, Berkeley, CA
 
-## Customize your `.gitignore` file
-A general `.gitignore` for use with Python or R development is included.  However, you may wish to customize this to the needs of your project.  The `.gitignore` file lets Git know what to push to the remote repository and what needs to be ignored and stay local.
+<sup>2 </sup> Joint Global Change Research Institute, Pacific Northwest National Laboratory and University of Maryland, College Park, MD
 
-## Suggestions
-- Don't bog down your repository with a bunch of raw data.  Instead archive and mint a DOI for your data and provide the reference in this repository with instructions for use.
-- Create complete and tested documentation for how to use what is in this repository to reproduce your experiment.
 
-## Creating a minted release for your meta-repository
-It is important to version and release your meta-repository as well due to changes that may occur during the publication review process.  If you do not know how to conduct a release on GitHub when linked with Zenodo, please contact chris.vernon@pnnl.gov to get set up.  
+\* corresponding author:  ctebaldi@lbl.gov
 
-## The meta-repository markdown template
-A sample meta-repository template is provided in this repository in the file `metarepo_template.md`.  
+## Abstract
+In this paper the authors introduce the emulator, STITCHES, which uses existing
+archives of Earth System Models’ (ESMs) scenario experiments to construct new scenarios, or enrich existing initial condition ensembles. This repository archives the data and scripts used in the experimental setup and analysis for the manuscript. 
 
-To use it, do the following:
-1. Create the template repository as mentioned above in [Using the template](#using-the-template)
-2. Clone your new repository to you local machine
-3. Change directories into your new meta-repository directory you just cloned
-4. Run `git rm README.md` to delete this file (`README.md`) and commit it using `git commit -m 'remove instructions'`
-5. Rename `metarepo_template.md` as `README.md`
-6. Run `git add README.md` to stage the new file that will show up on load in your remote GitHub repository
-7. Run `git rm metarepo_template.md` to remove the original template
-8. Run `git commit -m 'set up new template as readme'` to set the changes
-9. Run `git push` to send the changes to your remote GitHub repository
-10. Modify the `README.md` file to represent your experiement and use the `add`, `commit`, `push` workflow to update your remote repository
+## Journal reference
+Submitted to Earth System Dynamics 
+
+## Code reference
+UPDATE with the ZENDO infor for this GitHub repo. 
+
+
+## Contributing modeling software
+| Model | Version | Repository Link | DOI |
+|-------|---------|-----------------|-----|
+| STITCHES | TBD version | https://github.com/jgcri/stitches | TBD link to DOI dataset |
+
+
+## Workflow
+
+1. Install the software components required to conduct the experiment from [STITCHES](https://github.com/jgcri/stitches#getting-started-using-stitches)
+2. Run the following scripts in the `workflow` directory to re-create the manuscript experiments:
+    * A scripts that use STITCHES to emulate ESMs 
+    * AB scripts that produce STITCHES outputs and processes them for the manuscript
+    * B scripts process, analyze, and visualize A outputs for the manuscript
+        
+
+| Script Name | Description | 
+| --- | --- | 
+| `A.inital_cond_exp.py` | Script that emulates ssp245 & ssp370 GSAT at different tolerance and target ensemble sizes | 
+| `A.tas_psl_pr.py` | Script that produces gridded outputs for ssp245 & ssp370 joint tas-ps-psl products | 
+| `A.intermediate_exp.py` | Script that emulates intermediate scenarios using, GSAT outputs  | 
+| `AB.experiment_tolerance_sweep.py` | Script that emulates intermediate scenarios using, GSAT outputs  | 
+| `B.TBD script from CT ` | TBD description | 
+
+
+
