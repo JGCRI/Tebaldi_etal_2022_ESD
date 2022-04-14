@@ -18,8 +18,8 @@ import pkg_resources
 
 # pd.set_option('display.max_columns', None)
 
-# OUTPUT_DIR = pkg_resources.resource_filename('stitches', 'data/created_data')
-OUTPUT_DIR = '/pic/projects/GCAM/stitches_pic/new_scenarioMIP_experiments'
+OUTPUT_DIR = pkg_resources.resource_filename('stitches', 'data/created_data')
+
 
 # #############################################################################
 # Experiment  setup
