@@ -22,13 +22,13 @@ archives of Earth System Models’ (ESMs) scenario experiments to construct new 
 Submitted to Earth System Dynamics 
 
 ## Code reference
-UPDATE with the ZENDO infor for this GitHub repo. 
+
 
 
 ## Contributing modeling software
 | Model | Version | Repository Link | DOI |
 |-------|---------|-----------------|-----|
-| STITCHES | TBD version | https://github.com/jgcri/stitches | TBD link to DOI dataset |
+| STITCHES | v0.9.0 pre-release | https://github.com/jgcri/stitches | TBD link to DOI dataset |
 
 
 ## Workflow
@@ -38,15 +38,20 @@ UPDATE with the ZENDO infor for this GitHub repo.
     * A scripts that use STITCHES to emulate ESMs 
     * AB scripts that produce STITCHES outputs and processes them for the manuscript
     * B scripts process, analyze, and visualize A outputs for the manuscript
-        
+    * NOTE: paths to input and output directories may have to be updated in the scripts.
+
 
 | Script Name | Description | 
 | --- | --- | 
 | `A.inital_cond_exp.py` | Script that emulates ssp245 & ssp370 GSAT at different tolerance and target ensemble sizes | 
 | `A.tas_psl_pr.py` | Script that produces gridded outputs for ssp245 & ssp370 joint tas-ps-psl products | 
-| `A.intermediate_exp.py` | Script that emulates intermediate scenarios using, GSAT outputs  | 
-| `AB.experiment_tolerance_sweep.py` | Script that emulates intermediate scenarios using, GSAT outputs  | 
-| `B.TBD script from CT ` | TBD description | 
+| `A.intermediate_exp.py` | Script that emulates intermediate scenarios using ssp126 and ssp585 runs as the archive, GSAT outputs  | 
+| `AB.experiment_tolerance_sweep.py` | Script that emulates intermediate scenarios using all available CMIP6 runs over a range of tolerances and calculates error statistics, GSAT outputs and summary statistics outputs  | 
+| `B.ICEnsembles_ESD.r` | Script evaluating the outputs of `A.inital_cond_exp.py`, calculating error statistics and plotting results | 
+| `B.IntermediateScenarios_GSAT_ESD.r` | Script evaluating the outputs of `A.intermediate_exp.py`, calculating error statistics and plotting results | 
+| `B.IntermediateScenarios_Gridded_ESD.r` | Script evaluating the outputs of `A.tas_psl_pr.py`, calculating SOI and error statistics and plotting results | 
 
+
+Data generated from the A and AB steps for this publication are archived (https://doi.org/10.5281/zenodo.6461693).
 
 
