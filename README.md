@@ -28,7 +28,7 @@ Submitted to Earth System Dynamics
 ## Contributing modeling software
 | Model | Version | Repository Link | DOI |
 |-------|---------|-----------------|-----|
-| STITCHES | v0.9.0 pre-release | https://github.com/jgcri/stitches | TBD link to DOI dataset |
+| STITCHES | v0.9.0 pre-release | https://github.com/jgcri/stitches | https://doi.org/10.5281/zenodo.6463264 |
 
 
 ## Workflow
